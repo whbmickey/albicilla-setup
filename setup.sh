@@ -2,21 +2,22 @@
 
 set -e
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 case "$1" in
 "clone")
   echo "Clone codebase from github"
-  ./clone.sh
+  $DIR/clone.sh
   ;;
 "pull")
   echo "Pull docker images"
-  ./pull.sh
+  $DIR/pull.sh
   ;;
 "launch")
   echo "Launch containers"
-  ./launch.sh
+  $DIR/launch.sh
   ;;
-"help")
-*)
+"help" | *)
   echo "Support commands: clone|pull|launch"
   ;;
 esac
