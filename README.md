@@ -7,6 +7,9 @@ Setup scripts for deploy develop environment.
 3. [docker](https://docs.docker.com/installation/)
 
 ## Prepare
+### Running Docker without Sudo
+http://bsaunder.github.io/2014/12/21/running-docker-without-sudo/
+
 ### Edit `hosts`
 Add these lines to the `hosts` file
 
