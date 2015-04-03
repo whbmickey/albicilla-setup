@@ -19,14 +19,6 @@ for repo in $REPOS; do
     fi
     cd ..
   fi
-
-  if [ -e "$repo/package.json" ]; then
-    cd $repo && npm install && cd ..
-  fi
-
-  if [ -e "$repo/bower.json" ]; then
-    cd $repo && bower install --config.interactive=false && cd ..
-  fi
 done
 
 if [ ! -d "albicilla-api-master" ]; then
