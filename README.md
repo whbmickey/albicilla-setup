@@ -2,9 +2,9 @@
 Setup scripts for deploy develop environment.
 
 ## Install dependences
-1. git
-2. node
-3. docker
+1. [git](http://git-scm.com/downloads)
+2. [node](https://github.com/joyent/node/wiki/Installation)
+3. [docker](https://docs.docker.com/installation/)
 
 ## Prepare
 ### Edit `hosts`
