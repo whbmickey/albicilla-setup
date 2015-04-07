@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 NAME=proxy
-IP=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | grep 172.17)
+IP=$(ifconfig | grep -Eo 'inet (addr:|地址:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | grep 172.17)
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 source $DIR/dev-env-vars.sh
+
+npm set registry http://registry.tradesparq.com:4873/
 
 for dir in $(ls -d */); do
   if [[ -e $dir/launch-container.sh ]]; then
