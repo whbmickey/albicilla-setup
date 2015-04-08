@@ -14,9 +14,9 @@ for repo in $REPOS; do
     git remote set-url --push central no_push
 
     # TODO should be removed
-    if [[ "$repo" != "albicilla-user" ]]; then
-      git checkout launch-script
-    fi
+    #if [[ "$repo" != "albicilla-user" ]]; then
+      #git checkout launch-script
+    #fi
     cd ..
   fi
 done
@@ -26,6 +26,6 @@ if [ ! -d "albicilla-api-master" ]; then
   cp -r albicilla-api/ albicilla-api-master/
 
   # TODO uncomment 1st line, remove 2nd line
-  #cd albicilla-api && git checkout dev && cd ..
-  cd albicilla-api && git checkout launch-script-dev && cd ..
+  cd albicilla-api && git checkout dev && cd ..
+  #cd albicilla-api && git checkout launch-script-dev && cd ..
 fi
