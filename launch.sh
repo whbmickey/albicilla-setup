@@ -21,7 +21,7 @@ if docker ps -a | grep -q "$NAME"; then
 fi
 
 echo "Launch container $NAME"
-docker run -it -d --name="$NAME" -p 80:80 \
+docker run -it -d --restart=always --name="$NAME" -p 80:80 \
   --env API_ADDRESS="http://$IP:$API_MASTER_PORT" \
   --env USER_ADDRESS="http://$IP:$GENTILIS_PORT" \
   --env PUBLIC_ADDRESS="http://$IP:$PUBLIC_PORT" \
