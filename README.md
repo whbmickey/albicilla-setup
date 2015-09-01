@@ -7,14 +7,12 @@ Setup scripts for deploy develop environment.
 3. [docker](https://docs.docker.com/installation/)
 
 ## Prepare
-### Running Docker without Sudo
-http://bsaunder.github.io/2014/12/21/running-docker-without-sudo/
 
 ### Edit `hosts`
 Add these lines to the `hosts` file
 
 ```
-127.0.0.1	api_dev.albicilla.com
+127.0.0.1	api_v4.albicilla.com
 127.0.0.1	user3.albicilla.com
 127.0.0.1	user.albicilla.com
 127.0.0.1	api.albicilla.com
@@ -38,15 +36,21 @@ git clone git@github.com:Tradesparq/albicilla-setup.git
 ## Install
 ### Clone Codebase
 ```bash
-albicilla-setup/setup.sh clone
+albicilla-setup/clone.sh
 ```
 
 ### Pull Docker Images
 ```bash
-albicilla-setup/setup.sh pull
+albicilla-setup/pull.sh
+```
+
+### Setup
+```bash
+albicilla-setup/setup-all.sh
 ```
 
 ### Launch Docker Containers
 ```bash
-albicilla-setup/setup.sh launch
+cd albicilla-setup
+docker-compose up -d
 ```

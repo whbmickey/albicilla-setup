@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REPOS="albicilla-rest albicilla-api albicilla-public gentilis"
+REPOS="albicilla-rest albicilla-api albicilla-public albicilla-user gentilis"
 
 printf "Your github username:"
 read username
@@ -12,20 +12,6 @@ for repo in $REPOS; do
     cd $repo
     git remote add central git@github.com:Tradesparq/$repo.git
     git remote set-url --push central no_push
-
-    # TODO should be removed
-    #if [[ "$repo" != "albicilla-user" ]]; then
-      #git checkout launch-script
-    #fi
     cd ..
   fi
 done
-
-if [ ! -d "albicilla-api-master" ]; then
-  echo "Copy albicilla-api-master"
-  cp -r albicilla-api/ albicilla-api-master/
-
-  # TODO uncomment 1st line, remove 2nd line
-  cd albicilla-api && git checkout dev && cd ..
-  #cd albicilla-api && git checkout launch-script-dev && cd ..
-fi
