@@ -1,7 +1,6 @@
 proxy:
   container_name: proxy
   image: jwilder/nginx-proxy
-  restart: always
   ports:
     - "80:80"
   volumes:
@@ -9,7 +8,6 @@ proxy:
 rest:
   container_name: rest
   image: node:0.10
-  restart: always
   privileged: true
   links:
     - proxy
@@ -24,7 +22,6 @@ rest:
 api:
   container_name: api
   image: node:0.10
-  restart: always
   privileged: true
   links:
     - proxy
@@ -41,7 +38,6 @@ api:
 api-v4:
   container_name: api-v4
   image: node:0.10
-  restart: always
   privileged: true
   links:
     - proxy
@@ -60,7 +56,6 @@ api-v4:
 public:
   container_name: public
   image: node:0.10
-  restart: always
   privileged: true
   links:
     - proxy
@@ -78,7 +73,6 @@ public:
 gentilis:
   container_name: gentilis
   image: tradesparq/php-apache2
-  restart: always
   privileged: true
   links:
     - proxy
@@ -93,7 +87,6 @@ gentilis:
 user3:
   container_name: user3
   image: digitallyseamless/nodejs-bower-grunt:0.10
-  restart: always
   privileged: true
   links:
     - proxy
